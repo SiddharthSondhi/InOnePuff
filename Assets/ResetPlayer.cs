@@ -19,7 +19,6 @@ public class ResetPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         if (other.CompareTag("Player")){
-            Debug.Log(other);
             controller.alive = false;
         }
     }
