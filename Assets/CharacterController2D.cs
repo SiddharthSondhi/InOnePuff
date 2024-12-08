@@ -18,6 +18,8 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	private Transform _originalParent;
+
 
 	public bool alive = true;
 
@@ -152,4 +154,15 @@ public class CharacterController2D : MonoBehaviour
 			transform.position = new Vector3(-5, -1, 0);
 		}
 	}
+
+	public void SetParent(Transform newParent){
+		_originalParent = transform.parent;
+		transform.parent = newParent;
+	}
+
+	public void ResetParent(){
+		transform.parent = _originalParent;
+	}
+
+
 }
